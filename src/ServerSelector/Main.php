@@ -25,8 +25,8 @@ public function onEnable(): void {
 		$book = Item::get(Item::BOOK, 0, 1);
        	$player->setGamemode(0);
         $player->getInventory()->setSize(9);
-	$player->getInventory()->getItem()->Item::get(345)->setCustomName("§a§lMain Hub (§bTap me!)");
-	$player->getInventory()->getItem()->Item::get(340)->setCustomName("§aServer §bInfo\n§5Tap me!");
+	$player->getInventory()->getItem(1, Item::get(345)->setCustomName("§a§lMain Hub (§bTap me!)"));
+	$player->getInventory()->getItem(3, Item::get(340)->setCustomName("§aServer §bInfo\n§5Tap me!"));
 	 if($player->getInventory()->canAddItem()) {
             $player->getInventory()->addItem($hub);
             $player->getInventory()->addItem($book);
