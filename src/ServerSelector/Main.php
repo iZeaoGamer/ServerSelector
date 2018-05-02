@@ -23,11 +23,12 @@ public function onEnable(): void {
 		$name = $player->getName();
 		$hub = Item::get(Item::COMPASS, 0, 1);
 		$book = Item::get(Item::BOOK, 0, 1);
+		$item = Item::get($id, $meta, $amount);
        	$player->setGamemode(0);
         $player->getInventory()->setSize(9);
 	$player->getInventory()->getItem(1, Item::get(345)->setCustomName("§a§lMain Hub (§bTap me!)"));
 	$player->getInventory()->getItem(3, Item::get(340)->setCustomName("§aServer §bInfo\n§5Tap me!"));
-	 if($player->getInventory()->canAddItem($ev->getItem())) {
+	 if($player->getInventory()->canAddItem($item)) {
             $player->getInventory()->addItem($hub);
             $player->getInventory()->addItem($book);
 	}
