@@ -21,10 +21,16 @@ public function onEnable(): void {
 	public function onJoin(PlayerJoinEvent $ev) {
 		$player = $ev->getPlayer();
 		$name = $player->getName();
+		$hub = Item::get(Item::COMPASS, 0, 1);
+		$book = Item::get(Item::BOOK, 0, 1);
        	$player->setGamemode(0);
         $player->getInventory()->setSize(9);
-       	$player->getInventory()->setItem(0, Item::get(345)->setCustomName("§a§lMain Hub (§bTap me!)"));
-	$player->getInventory()->setItem(1, Item::get(340)->setCustomName("§aServer §bInfo\n§5Tap me!"));
+       	$player->getInventory()->addItem($hub)->setCustomName("§a§lMain Hub (§bTap me!)");
+	$player->getInventory()->addItem($book)->setCustomName("§aServer §bInfo\n§5Tap me!");
+	 if($player->getInventory()->canAddItem()) {
+            $player->getInventory()->addItem($hub);
+            $player->getInventory()->addItem($book);
+	}
 	}
       public function onInteract(PlayerInteractEvent $ev) {
 	   $player = $ev->getPlayer();
