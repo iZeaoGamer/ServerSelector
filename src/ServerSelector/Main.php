@@ -32,7 +32,7 @@ public function onEnable(): void {
           if($item->getCustomName() == "§a§lMain Hub (§bTap me!)"){
 		  $ev->getPlayer()->transfer("play.voidminerpe.ml", "25621");
 		  
-	  }elseif($item->getCustomName() == "§cYou§fTube §bInfo\n§5Tap me!"){
+	  }elseif($item->getCustomName() == "§aServer §bInfo\n§5Tap me!"){
 		  $player->sendMessage("§cYou§fTube §dRank info:\n§a1. §2You must have 100+ §asubscribers!\n§a2. §2You must make a server review for the void network. (Review all servers!)\n§a3. §2You must add the ip & port in the description:\n\n§cYou§fTube§4+ §bInfo:\n§b1. §3You must have 300+ subscribers.\n§b2. You must make a server review for The Void Network\n§b3. §bYou must add the IP and port in the descripotion.\n§aIP: §bplay.voidminerpe.ml §aPort: §b25621\n§bDiscord: §3http://tinyurl.com/zeaodc");
 		  
 		}
